@@ -82,9 +82,9 @@ open class WSTagsField: UIScrollView {
     @available(*, unavailable, message: "Use 'cornerRadius' instead.")
     open var tagCornerRadius: CGFloat = 3.0
 
-    open var cornerRadius: CGFloat = 3.0 {
+    open var cornerRadius_: CGFloat = 3.0 {
         didSet {
-            tagViews.forEach { $0.cornerRadius = self.cornerRadius }
+            tagViews.forEach { $0.cornerRadius = self.cornerRadius_ }
         }
     }
 
@@ -383,7 +383,7 @@ open class WSTagsField: UIScrollView {
         tagView.selectedColor = self.selectedColor
         tagView.selectedTextColor = self.selectedTextColor
         tagView.displayDelimiter = self.isDelimiterVisible ? self.delimiter : ""
-        tagView.cornerRadius = self.cornerRadius
+        tagView.cornerRadius = self.cornerRadius_
         tagView.borderWidth = self.borderWidth
         tagView.borderColor = self.borderColor
         tagView.keyboardAppearanceType = self.keyboardAppearance

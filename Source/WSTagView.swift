@@ -10,6 +10,8 @@ import UIKit
 
 open class WSTagView: UIView {
     fileprivate let textLabel = UILabel()
+	
+	open var didTapToSelect: Bool = false
 
     open var displayText: String = "" {
         didSet {
@@ -208,6 +210,7 @@ open class WSTagView: UIView {
 
     // MARK: - Gesture Recognizers
     @objc func handleTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+		didTapToSelect = true
         if selected {
             return
         }
